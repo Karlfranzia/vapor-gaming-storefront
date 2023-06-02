@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 
 const Slider = ( {games} ) => {
     console.log(games)
     const displayCards = games.map((game, index) => (
-      <Card key={index}>
+      <Card sx = {{marginTop:'5rem'}} key={index}>
         <CardMedia component="img" image={game.background_image} />
         <CardContent>
           <Typography variant="h6">{game.name}</Typography>
@@ -16,9 +16,7 @@ const Slider = ( {games} ) => {
   
     return (
       <div>
-        <div>{displayCards}</div>
-        <Button>Prev</Button>
-        <Button>Next</Button>
+        <div>{displayCards}</div>       
       </div>
     );
   };

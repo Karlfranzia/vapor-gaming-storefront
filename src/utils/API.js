@@ -3,7 +3,7 @@ import axios from 'axios';
     export const topRated = async () => {
         try {
           const response = await axios.get(
-            `https://api.rawg.io/api/games?ordering=-rating&key=f56734a274854d6194e9c70972796b6e`
+            `https://api.rawg.io/api/games?metacritic=80,100&key=f56734a274854d6194e9c70972796b6e`
           );
           return response.data.results;
         } catch (error) {
