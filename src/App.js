@@ -1,19 +1,45 @@
-
-
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import TopGamesSlider from './components/TopGamesSlider'
-import ResponsiveAppBar from './components/AppBar';
-import LeftSidebar from './components/LeftSidebar';
+
+import Home from './pages/Home'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div style={{ display: 'flex' }}>
-      <ResponsiveAppBar/>
-      <LeftSidebar />
-      <div style={{ flexGrow: 1 }}></div>
-        <TopGamesSlider/>
-      < div/>
-    </div>
+    <ApolloProvider client={client}>
+      {/* Wrap page elements in Router component to keep track of location state */}
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          
+          <div className="container">
+            <Routes>
+              {/* Define routes to render different page components at different paths */}
+              <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<SignUp />} 
+              />
+              
+            </Routes>
+          </div>
+         
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
