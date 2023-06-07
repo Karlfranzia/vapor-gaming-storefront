@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Slider from './Slider';
+import SliderComponent from './Slider';
 import { topRated } from '../utils/API.js';
+import {Typography } from '@mui/material';
 
 const TopGamesSlider = () => {
   const [gamesData, setGamesData] = useState([]);
@@ -18,7 +19,7 @@ const TopGamesSlider = () => {
     fetchData();
   }, []);
 
-  return gamesData.length > 0 ? <Slider games={gamesData} /> : <div>Loading...</div>;
+  return gamesData.length > 0 ?<SliderComponent games={gamesData} type={'Top Rated Games'} /> : <div>Loading...</div>;
 };
 
 export default TopGamesSlider;

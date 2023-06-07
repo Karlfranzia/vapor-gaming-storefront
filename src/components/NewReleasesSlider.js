@@ -18,7 +18,7 @@ const NewReleasesSlider = () => {
     fetchData();
   }, []);
 
-  return gamesData.length > 0 ? <Slider games={gamesData} /> : <div>Loading...</div>;
+  return gamesData.length > 0 ? <Slider games={gamesData} type={'New Releases'} /> : <div>Loading...</div>;
 };
 
 export default NewReleasesSlider;

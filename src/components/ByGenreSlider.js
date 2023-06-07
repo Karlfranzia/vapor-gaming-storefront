@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Slider from './Slider';
+import SliderComponent from './Slider';
 import { byGenre } from '../utils/API.js';
 
-const ByGenreSlider = ({genre}) => {
+const ByGenreSlider = ({genre, type}) => {
   const [gamesData, setGamesData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const games = await byGenre(genre);
+        console.log(games)
         setGamesData(games);
       } catch (error) {
         console.error(error);
@@ -18,7 +19,7 @@ const ByGenreSlider = ({genre}) => {
     fetchData();
   }, []);
 
-  return gamesData.length > 0 ? <Slider games={gamesData} /> : <div>Loading...</div>;
+  return gamesData.length > 0 ? <SliderComponent games={gamesData} type={type} /> : <div>Loading...</div>;
 };
 
 export default ByGenreSlider;

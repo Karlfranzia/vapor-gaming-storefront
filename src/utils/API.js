@@ -12,84 +12,84 @@ import axios from 'axios';
         }
       };
 
-      const newReleases = async () => {
+      export const newReleases = async () => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games?ordering=released&key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const searchGame = async (query) => {
+      export const searchGame = async (query) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games?search=${query}&key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const byTag = async (query) => {
+      export const byTag = async (query) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games?tags=${query}&key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const byGenre = async (query) => {
+      export const byGenre = async (query) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games?genres=${query}&key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const gameDetails = async (id) => {
+      export const gameDetails = async (id) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games/${id}?key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const gameTrailers = async (id) => {
+      export const gameTrailers = async (id) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games/${id}/movies?key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
         }
       };
 
-      const gameReddit = async (id) => {
+      export const gameReddit = async (id) => {
         try {
           const response = await axios.get(
             `https://api.rawg.io/api/games/${id}/reddit?key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data;
+          return response.data.results;
         } catch (error) {
           console.error(error);
           throw error;
