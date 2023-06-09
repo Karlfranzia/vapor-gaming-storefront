@@ -53,7 +53,7 @@ function App() {
                 element={<SignUp />} 
               />
               <Route 
-                path="/Game" 
+                path="/Game/:slug" 
                 element={<Game />} 
               />
               

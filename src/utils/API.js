@@ -65,7 +65,7 @@ import axios from 'axios';
           const response = await axios.get(
             `https://api.rawg.io/api/games/${id}?key=f56734a274854d6194e9c70972796b6e`
           );
-          return response.data.results;
+          return response.data;
         } catch (error) {
           console.error(error);
           throw error;
@@ -96,6 +96,18 @@ import axios from 'axios';
         }
       };
 
+      export const gameScreenshotsAPI = async (id) => {
+        try {
+          const response = await axios.get(
+            `https://api.rawg.io/api/games/${id}/screenshots?key=f56734a274854d6194e9c70972796b6e`
+          );
+          return response.data.results;
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      };
+
       const API = {
         topRated,
         newReleases,
@@ -104,7 +116,8 @@ import axios from 'axios';
         byGenre, 
         gameDetails, 
         gameTrailers, 
-        gameReddit
+        gameReddit,
+        gameScreenshotsAPI
       };
 
 export default API

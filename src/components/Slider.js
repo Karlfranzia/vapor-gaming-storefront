@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -6,19 +7,19 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 const SliderComponent = ({ games, type }) => {
-  useEffect(() => {
-    // Optional: You can customize the Slick carousel settings here if needed
-  }, []);
+  
 
-  const displayCards = games.map((game, index) => (
+  const displayCards = games.slice(0, 10).map((game, index) => (
     <div key={index} className="slide-content"  >
-      <Card variant='outlined' sx={{ width:'95%'}}>
-        <CardMedia component="img" image={game.background_image} style={{ height: '10rem', objectFit: 'cover' }} />
-        <CardContent>
-          <Typography variant="h7">{game.name}</Typography>
-          <Typography variant="body2">{game.description}</Typography>
-        </CardContent>
-      </Card>
+      <Link to={`/game/${game.slug}`} style={{ textDecoration: 'none' }} as="a">
+        <Card variant='outlined' sx={{ width:'95%'}}>
+          <CardMedia component="img" image={game.background_image} style={{ height: '10rem', objectFit: 'cover' }} />
+          <CardContent>
+            <Typography variant="h7">{game.name}</Typography>
+            <Typography variant="body2">{game.description}</Typography>
+          </CardContent>
+        </Card>
+      </Link>  
     </div>
 
 
