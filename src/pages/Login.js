@@ -52,7 +52,7 @@ function Login() {
         >
           <div
             style={{
-              height:"400px",
+              height:"350px",
               width: "400px",
               padding: "20px",
               backgroundColor: "#ffffff",
@@ -62,7 +62,7 @@ function Login() {
           >
             <h2 style={{ textAlign: "center", marginTop: "0" }}>Login</h2>
             <form onSubmit={handleFormSubmit} style={{ display: "flex", flexDirection: "column" }}>
-              <label style={{ marginTop: "40px", fontWeight: "bold" }}>
+              <label style={{ marginTop: "20px", fontWeight: "bold" }}>
                 Email
               </label>
               <input

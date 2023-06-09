@@ -69,7 +69,7 @@ function SignUp() {
               boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <h2 style={{ textAlign: "center", marginTop: "0" }}>Login</h2>
+            <h2 style={{ textAlign: "center", marginTop: "0" }}>Sign Up</h2>
 
             {data ? (
               <p>
