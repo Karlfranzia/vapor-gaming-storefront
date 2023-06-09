@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Game from './pages/Game'
+import Search from './pages/Search';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -55,6 +56,10 @@ function App() {
               <Route 
                 path="/Game/:slug" 
                 element={<Game />} 
+              />
+              <Route 
+                path="/Search" 
+                element={<Search />} 
               />
               
             </Routes>
