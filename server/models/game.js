@@ -1,11 +1,20 @@
 const { Schema, model } = require("mongoose");
 
-const bcrypt = require("bcrypt");
-
 const gameSchema = new Schema({
-
-
-})
+  gameId: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  background: {
+    type: String,
+    required: true,
+  },
+});
 
 const Game = model('Game', gameSchema);
 

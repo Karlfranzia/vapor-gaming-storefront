@@ -23,3 +23,17 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_GAME_TO_USER = gql`
+  mutation addGameToUser($profileId: ID!, $game: GameInput!) {
+    addGameToUser(profileId: $profileId, game: $game) {
+      _id
+      username
+      email
+      games {
+        gameId
+        name
+        background
+      }
+    }
+  }
+`;

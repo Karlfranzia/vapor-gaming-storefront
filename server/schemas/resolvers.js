@@ -39,6 +39,19 @@ const resolvers = {
         console.log(err);
       }
     },
+    addGameToUser: async (parent, { profileId, game }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: profileId },
+          { $push: { games: game } },
+          { new: true }
+        );
+    
+        return updatedUser;
+      }
+    
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 

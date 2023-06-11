@@ -7,13 +7,14 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Game from './pages/Game'
 import Search from './pages/Search';
+import Library from './pages/Library'
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
 //   cache: new InMemoryCache(),
 // });
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -60,6 +61,10 @@ function App() {
               <Route 
                 path="/Search" 
                 element={<Search />} 
+              />
+              <Route 
+                path="/Library" 
+                element={<Library />} 
               />
               
             </Routes>

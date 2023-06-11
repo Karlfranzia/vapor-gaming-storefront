@@ -1,4 +1,4 @@
 const User =require('./User');
-const Game =require('./game');
+const Game =require('./Game');
 
 module.exports = { User, Game };
