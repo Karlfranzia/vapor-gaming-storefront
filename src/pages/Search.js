@@ -25,7 +25,7 @@ function Search() {
   const displayCards = gameData.map((game, index) => (
     <Grid item key={index} xs={12} sm={6} md={4}>
       <Link to={`/game/${game.slug}`} style={{ textDecoration: 'none' }} as="a">
-        <Card variant='outlined'>
+        <Card elevation={5}>
           <CardMedia component="img" image={game.background_image} style={{ height: '10rem', objectFit: 'cover' }} />
           <CardContent>
             <Typography variant="h7">{game.name}</Typography>
