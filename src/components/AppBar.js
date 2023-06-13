@@ -11,9 +11,9 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import Auth from '../utils/auth';
+import VaporLogo from '../vapor-logo-alt.png';
 
 const pages = ["Search", "Home", "Library"];
 const settings = ["Login", "SignUp", "Logout"];
@@ -48,7 +48,7 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img src={VaporLogo} alt="vapor-logo"></img>
           <Typography
             variant="h6"
             noWrap
@@ -64,7 +64,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            VAPOR
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -99,7 +99,6 @@ function ResponsiveAppBar() {
               
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -116,7 +115,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            VAPOR GAMES
           </Typography>
           <Box
             sx={{
@@ -124,17 +123,6 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex", justifyContent: "center" },
             }}
           >
-            {pages.map((page) => (
-              <Link to={page === "Home" ? "/" : `/${page}`} style={{ textDecoration: "none" }}>
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page}
-                </Button>
-              </Link>
-            ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
