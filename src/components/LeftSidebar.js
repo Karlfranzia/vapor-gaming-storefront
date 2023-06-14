@@ -1,29 +1,29 @@
 import React from 'react';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Home, Inbox, Mail } from '@mui/icons-material';
+import { Bookmark, Home, Search } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const LeftSidebar = () => {
   return (
-    
     <Drawer variant="permanent" sx={{ flexShrink: 0, width: 120, marginLeft: '25px', marginTop: '25px' }}>
         <List sx={{marginTop:'5rem'}}>
-          <ListItem button>
+          <ListItem button component={ Link } to='/'>
             <ListItemIcon>
               <Home />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={ Link } to='/search'>
             <ListItemIcon>
-              <Inbox />
+              <Search />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="Search" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={ Link } to='/library'>
             <ListItemIcon>
-              <Mail />
+              <Bookmark />
             </ListItemIcon>
-            <ListItemText primary="Mail" />
+            <ListItemText primary="Library"/>
           </ListItem>
         </List>
       </Drawer>
